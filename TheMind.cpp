@@ -1,7 +1,34 @@
 #include <iostream>
-using namespace std;
 #include <vector>
+#include <string>
+using namespace std;
 
+
+class Jugador{
+
+    //Atributos
+    private:
+        string nombre;
+        int numJugador;
+        vector<int> lasCartas; 
+        /*Exactamente las cartas que tiene el jugador (qué numeros tiene en las cartas de su mano)*/
+    
+    //Métodos
+    public:
+        Jugador();
+        /*defino el nombre del jugador y el número del jugador*/
+        int lanzarCarta();
+        /*Retorna la menor carta del mazo del jugador*/
+        int recibirCarta();
+        /*Recibe el vector con los números repartidos y se asigna al vector lasCartas*/
+
+
+};
+
+
+
+vector<Jugador> jugadores;
+/*Vector donde se van a guardar los nombres de los jugadores como un dato global*/
 
 
 
@@ -20,10 +47,10 @@ class Partida{
     //Métodos
 
     public:
-        Partida();
+        Partida(int jugadores);
         /*define los atributos de la clase partida, define el vector de jugadores 
         (crea la cantidad de jugadores que va a tener)*/
-        int repartirCartas(int nivel,vector<Jugador> jugadores); 
+        int repartirCartas(int nivel,vector<Jugador>& jugadores); 
         // Asigna los números aleatorios sin repetir a cada jugador, recibe el numero de nivel
         bool cartaLanzada(int cartaLanzada);
         /*verifica que la carta lanzada si sea la menor entre todas las 
@@ -47,31 +74,47 @@ class Partida{
 
 };
 
-Partida::Partida(){
+Partida::Partida(int jugadores){
 
-};
-
-
-class Jugador{
-
-    //Atributos
-    private:
-        string nombre;
-        int numJugador;
-        vector<int> lasCartas; 
-        /*Exactamente las cartas que tiene el jugador (qué numeros tiene en las cartas de su mano)*/
+    nivel = 1;
     
-    //Métodos
-    public:
-        Jugador();
-        /*defino el nombre del jugador y el número del jugador*/
-        int lanzarCarta();
-        /*Retorna la menor carta del mazo del jugador*/
-        int recibirCarta();
-        /*Recibe el vector con los números repartidos y se asigna al vector lasCartas*/
-
+    this -> jugadores = jugadores;
+    //Variable global this-> para referirme a la variable declarada en los atributos.
+    
+    switch (jugadores)
+    {
+    case 2:
+        vidas=2;
+        break;
+    case 3:
+        vidas=3;
+        break;
+    case 4:
+        vidas=4;
+        break;
+    
+    default:
+        vidas=2;
+        break;
+    };
+        
+    shuriken = 1;
 
 };
+
+int Partida::repartirCartas(int nivel,vector<Jugador>& jugadores){
+
+    vector<vector<int>> matriz(jugadores.size(),vector<int>(nivel));
+    
+
+
+    return 0;
+
+};
+
+
+
+
 
 int main(){
 
