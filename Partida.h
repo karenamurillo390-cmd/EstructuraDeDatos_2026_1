@@ -1,5 +1,6 @@
 # ifndef PARTIDA_H
 # define PARTIDA_H
+#include <vector>
 
 #include "Jugador.h"
 
