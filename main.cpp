@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+
+#include <Partida.h>
 using namespace std;
 
 
