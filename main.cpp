@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-#include <Partida.h>
+#include "Partida.h"
 using namespace std;
 
 
