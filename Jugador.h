@@ -15,11 +15,11 @@ class Jugador{
     
     //Métodos
     public:
-        Jugador();
+        Jugador(string i);
         /*defino el nombre del jugador y el número del jugador*/
         int lanzarCarta();
         /*Retorna la menor carta del mazo del jugador*/
-        int recibirCarta();
+        void recibirCarta(int carta);
         /*Recibe el vector con los números repartidos y se asigna al vector lasCartas*/
 
 
