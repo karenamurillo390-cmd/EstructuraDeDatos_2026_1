@@ -1,4 +1,7 @@
 #include "Partida.h"
+#include <vector> //1
+#include <string>  //2
+using namespace std; //3
 
 Partida::Partida(int jugadores){
 

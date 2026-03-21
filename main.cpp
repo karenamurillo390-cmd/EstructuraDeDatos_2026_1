@@ -2,12 +2,13 @@
 #include <vector>
 #include <string>
 
-#include <Partida.h>
+#include "Partida.h"
 using namespace std;
 
 
 
 int main(){
+
 
     /*
     - cout Hola ¿cuántos jugadores van a participar?
@@ -24,3 +25,4 @@ int main(){
 
 
 }
+

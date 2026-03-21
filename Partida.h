@@ -1,8 +1,9 @@
 # ifndef PARTIDA_H
 # define PARTIDA_H
 #include <vector>
-
 #include "Jugador.h"
+using namespace std;
+
 
 class Partida{
     
