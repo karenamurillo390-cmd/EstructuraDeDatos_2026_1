@@ -22,6 +22,7 @@ class Jugador{
         /*Retorna la menor carta del mazo del jugador*/
         void recibirCarta(vector<int> mano);
         /*Recibe el vector con los números repartidos y se asigna al vector lasCartas*/
+        int cantidad;
 
 
 };
