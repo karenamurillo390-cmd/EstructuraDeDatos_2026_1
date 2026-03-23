@@ -57,3 +57,10 @@ vector<int> Jugador::getLasCartas(){
 	return this -> lasCartas;
 
 }
+
+
+string Jugador::getNombre(){
+	
+	return nombre;
+
+};

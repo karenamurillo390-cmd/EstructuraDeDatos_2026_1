@@ -38,17 +38,53 @@ class Partida{
         
         /*Se descartan la carta de menor valor del mazo de cada jugador, modificando 
         el vector de las cartas de los jugadores*/
-        bool usarShuriken(int usoShuriken);
+        vector<int> usarShuriken();
         
         /*suma nivel set&get*/
-        int modificacionNivel(bool validador);
+        void modificacionNivel();
         
         /*suma o resta de vidas set&get*/
         int modificacionVidas(bool validador);
         
         /*suma o resta de shuriken set&get*/
-        int modificacionShuriken(bool validador);
-        
+        void modificacionShuriken(bool validador);
+
+        /**/
+        void finalizarPartida(bool finalizar);
+
+        /**/
+        void vaciarCartasJugadas();
+
+        /**/
+        void generarJugadores(string n, int num);
+
+        /**/
+        vector<int> devolverCartar(int n);
+
+        /**/
+        string devolverNombre(int n);
+
+        /**/
+        int getJugadores();
+
+        /**/
+        int getNivel();
+
+        /**/
+        int getVidas();
+
+        /**/
+        int getShuriken();
+
+        /**/
+        vector<int> getCartasJugando();
+
+        /**/
+        void setJugadores(int j);
+
+        /**/
+        bool aunEnpartida();
+
 
 };
 

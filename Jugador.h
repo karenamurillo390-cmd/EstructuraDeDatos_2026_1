@@ -33,6 +33,9 @@ class Jugador{
         /*Mostrar el vector que contenga las cartas de cada jugador*/
         vector<int> getLasCartas();
 
+        /**/
+        string getNombre();
+
 
 };
 
