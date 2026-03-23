@@ -13,8 +13,8 @@ Partida::Partida(int jugadores){
 
     nivel = 1;
     
+    /*Variable global this-> para referirme a la variable declarada en los atributos.*/
     this -> jugadores = jugadores;
-    //Variable global this-> para referirme a la variable declarada en los atributos.
     
     switch (jugadores)
     {
@@ -44,16 +44,16 @@ void Partida::repartirCartas(){
     /*vector con los 100 espacios para las cartas*/
     vector<int> mazo(100); 
     
-    /*organiza los números del 1 al 100 en el vector mazo*/
+    /*Se organiza los números del 1 al 100 en el vector mazo*/
     iota(mazo.begin(), mazo.end(), 1); 
     
-    /*obtiene semilla del pc, y generar aleatoriedad*/
+    /*Se obtiene semilla del pc, y generar aleatoriedad*/
     random_device rd; 
     
-    /*genera los números aleatorios*/
+    /*Se genera los números aleatorios*/
     mt19937 g(rd()); 
     
-    /*baraja el vector mazo para reorganizar los números en diferentes posiciones*/
+    /*Se baraja el vector mazo para reorganizar los números en diferentes posiciones*/
     shuffle(mazo.begin(), mazo.end(), g); 
     
     /*vector de vectores para asignar cada mano*/
