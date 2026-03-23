@@ -1,8 +1,9 @@
 # ifndef PARTIDA_H
 # define PARTIDA_H
 #include <vector>
-
 #include "Jugador.h"
+using namespace std;
+
 
 class Partida{
     
@@ -22,12 +23,11 @@ class Partida{
         Partida(int jugadores);
         /*define los atributos de la clase partida, define el vector de jugadores 
         (crea la cantidad de jugadores que va a tener)*/
-        int repartirCartas(int nivel,vector<Jugador>& jugadores); 
+        void repartirCartas(int jugadores,int nivel); 
         // Asigna los números aleatorios sin repetir a cada jugador, recibe el numero de nivel
-        bool cartaLanzada(int cartaLanzada);
+        bool cartaLanzada(int nroJugador);
         /*verifica que la carta lanzada si sea la menor entre todas las 
         cartas de los jugadores. Si no es menor, descarta las cartas menores, 
-        las elimina del array de cartas del 1 al 100, 
         resta una vida, y agrega la carta lanzada al array de cartas jugando*/
         bool verificacionPartida(const vector<int>& cartasJugando); 
         /*Se recibe el vector de las cartas lanzadas por los jugadores 

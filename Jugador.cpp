@@ -1,4 +1,5 @@
 #include "Jugador.h"
+#include <vector>
 using namespace std;
 
 //nombre del jugador
@@ -7,15 +8,18 @@ Jugador::Jugador(string i){
 	cantidad=0;
 }
 
-//recibir cartas
-void Jugador::recibirCarta(int carta){
-		lasCartas.push_back(carta);
-		cantidad++;
+//Se reciben las cartas que proviene del método repartirCartas*/
+void Jugador::recibirCarta(vector<int> mano){
+	
+	lasCartas = mano;
+	cantidad =lasCartas.size();//Declaramos la cantidad de cartas que hay actualmente en la mano
 	
 }
+
+
 int Jugador::lanzarCarta(){
 	if(cantidad==0){
-		return;
+		return -1;
 	}
 	int menor =lasCartas[0];
 	int posicion=0;

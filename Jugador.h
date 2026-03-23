@@ -2,6 +2,7 @@
 #define JUGADOR_H
 #include <string>
 #include <vector>
+using namespace std;
 
 
 class Jugador{
@@ -19,7 +20,7 @@ class Jugador{
         /*defino el nombre del jugador y el número del jugador*/
         int lanzarCarta();
         /*Retorna la menor carta del mazo del jugador*/
-        void recibirCarta(int carta);
+        void recibirCarta(vector<int> mano);
         /*Recibe el vector con los números repartidos y se asigna al vector lasCartas*/
         int cantidad;
 
