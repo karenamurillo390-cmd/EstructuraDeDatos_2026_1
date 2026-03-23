@@ -39,25 +39,26 @@ Partida::Partida(int jugadores){
 
 
 
-void Partida::repartirCartas(int jugadores,int nivel){
+void Partida::repartirCartas(){
 
+    /*vector con los 100 espacios para las cartas*/
     vector<int> mazo(100); 
-    //vector con los 100 espacios para las cartas 
     
+    /*organiza los números del 1 al 100 en el vector mazo*/
     iota(mazo.begin(), mazo.end(), 1); 
-    //organiza los números del 1 al 100 en el vector mazo
     
+    /*obtiene semilla del pc, y generar aleatoriedad*/
     random_device rd; 
-    //obtiene semilla del pc, y generar aleatoriedad
     
+    /*genera los números aleatorios*/
     mt19937 g(rd()); 
-    //genera los números aleatorios
     
+    /*baraja el vector mazo para reorganizar los números en diferentes posiciones*/
     shuffle(mazo.begin(), mazo.end(), g); 
-    //baraja el vector mazo para reorganizar los números en diferentes posiciones
-
+    
+    /*vector de vectores para asignar cada mano*/
     vector<vector<int>> mano(jugadores); 
-    //vector de vectores para asignar cada mano
+    
     
     
     /*Bucle for para repartir las cartas*/
@@ -82,6 +83,8 @@ void Partida::repartirCartas(int jugadores,int nivel){
 
 bool Partida::cartaLanzada(int nroJugador){
     
+    bool validador = true;
+
     int carta = nameJugadores[nroJugador - 1].lanzarCarta();
 
     cartasJugando.push_back(carta);
@@ -89,8 +92,39 @@ bool Partida::cartaLanzada(int nroJugador){
 
     /*validar si es menor en alguno de los otros y descartar esos valores*/
 
+    vector<int> menores;
+    vector<int> mayores;
+
+    for(Jugador& x: nameJugadores){
+        for(int y:x.getLasCartas()){
+            if(y<carta){
+                menores.push_back(y);
+            }else{
+                mayores.push_back(y);
+            }
+        }
+
+        if(menores.size() > 0){
+            validador = false;
+            menores.clear();
+            x.recibirCarta(mayores);
+            mayores.clear();
+        }else{
+            menores.clear();
+            mayores.clear();
+        }
+
+    }
     
-    
+    return validador;
+
+};
+
+
+bool Partida::verificacionPartida(bool validador){
+
+
+
 
 
 
