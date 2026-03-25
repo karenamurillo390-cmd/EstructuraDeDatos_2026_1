@@ -44,7 +44,7 @@ class Partida{
         void modificacionNivel();
         
         /*suma o resta de vidas set&get*/
-        int modificacionVidas(bool validador);
+        void modificacionVidas(bool validador);
         
         /*suma o resta de shuriken set&get*/
         void modificacionShuriken(bool validador);

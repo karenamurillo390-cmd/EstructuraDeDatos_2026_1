@@ -4,7 +4,9 @@
 #include <string>  //2
 #include <numeric> //para función iota
 #include <algorithm> //para funciones shuffle, sort, copy
-#include <random> //para funciones random_device, mt19937, 
+#include <random> //para funciones random_device, mt19937,
+#include <thread> // Para sleep_for
+#include <chrono> // Para las unidades de tiempo 
 using namespace std; //3
 
 vector<Jugador> nameJugadores;
@@ -246,11 +248,12 @@ void Partida::modificacionNivel(){
 
 
 
-int Partida::modificacionVidas(bool validador){
+void Partida::modificacionVidas(bool validador){
 
     if(validador){ 
         vidas++; 
-        cout << "Se ha sumado una vida\n"; 
+        cout << "Se ha sumado una vida\n";
+        std::this_thread::sleep_for(std::chrono::seconds(2)); 
     }else{
         vidas--;
     }
