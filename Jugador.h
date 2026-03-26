@@ -15,6 +15,9 @@ class Jugador{
         
         /*Exactamente las cartas que tiene el jugador (qué numeros tiene en las cartas de su mano)*/
         vector<int> lasCartas; 
+
+        /*Definir la cantidad de espacios en el vector de lasCartas*/
+        int cantidad;
         
     
     //Métodos
@@ -28,12 +31,10 @@ class Jugador{
         /*Recibe el vector con los números repartidos y se asigna al vector lasCartas*/
         void recibirCarta(vector<int> mano);
         
-        int cantidad;
-
         /*Mostrar el vector que contenga las cartas de cada jugador*/
         vector<int> getLasCartas();
 
-        /**/
+        /*Retornar los nombres de los jugadores*/
         string getNombre();
 
 
