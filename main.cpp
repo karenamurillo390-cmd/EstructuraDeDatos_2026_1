@@ -61,7 +61,7 @@ void mostrarCartas(){
     int opcionJugador;
     do
     {
-        system("cls");
+        system("clear");
         std::cout << "Indicar jugador a mostrar las cartas: " << endl;
         for(int i =0; i < juego.getJugadores();i++){
             std::cout << i+1 << ":" << juego.devolverNombre(i+1) << std::endl;
@@ -83,7 +83,7 @@ void mostrarCartas(){
 void menuNivel(){
         int opc;
         do {
-            system("cls");
+            system("clear");
             std::cout << "_________ Estamos en el  nivel " << juego.getNivel() << " _________ " << endl;
             std::cout << endl;
        
@@ -129,7 +129,7 @@ void menuNivel(){
 
 
 void lanzarShuriken(){
-    system("cls");
+    system("clear");
     if (juego.getShuriken() > 0) {
         std::vector<int> cartas;
         cartas = juego.usarShuriken();
@@ -152,7 +152,7 @@ void lanzarShuriken(){
 void lanzarCarta(){
     int opc;
     do {
-        system("cls");
+        system("clear");
         std::cout << "Indique el número del jugador que va a lanzar la carta" << std::endl;
         for (int i = 0; i < juego.getJugadores(); i++) {
             std::cout << (i + 1) << ". " << juego.devolverNombre(i + 1) << std::endl;
@@ -236,7 +236,7 @@ void cargarEstado() {
     } else {
         std::cout << "No se pudo cargar el estado de partida" << endl;
     }
-    std::this_thread::sleep_for(std::chrono::seconds(2));
+    std::this_thread::sleep_for(std::chrono::seconds(4));
 };
 
 int main(){
