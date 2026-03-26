@@ -3,6 +3,7 @@
 #include <string>
 #include <thread> // Para sleep_for
 #include <chrono> // Para las unidades de tiempo
+#include <fstream> // Para manejo de archivos
 
 #include "Partida.h"
 using namespace std;
@@ -17,6 +18,8 @@ void lanzarShuriken();
 void lanzarCarta();
 void mostrarEstado();
 void mostrarCartasDelTablero();
+void guardarEstado();
+void cargarEstado();
 
 
 void crearJugadores(int jugador){
@@ -91,6 +94,8 @@ void menuNivel(){
             std::cout << "3. Mostrar cartas del jugador" << endl;
             std::cout << "4. Mostrar el estado de partida" << endl;
             std::cout << "5. Mostrar cartas en juego" << endl;
+            std::cout << "6. Guardar estado de partida" << endl;
+            std::cout << "7. Cargar estado de partida" << endl;
             std::cin >> opc;
             switch (opc) {
                 case 1:
@@ -107,6 +112,12 @@ void menuNivel(){
                     break;
                 case 5 :
                     mostrarCartasDelTablero();
+                    break;
+                case 6:
+                    guardarEstado();
+                    break;
+                case 7:
+                    cargarEstado();
                     break;
                 default:
                     
@@ -199,6 +210,34 @@ void mostrarEstado() {
     std::this_thread::sleep_for(std::chrono::seconds(4));
 };
 
+void guardarEstado() {
+    ofstream archivo("estado_partida.txt");
+    if (archivo.is_open()) {
+        archivo << "Nivel: " << juego.getNivel() << endl;
+        archivo << "Vidas: " << juego.getVidas() << endl;
+        archivo << "Shurikens: " << juego.getShuriken() << endl;
+        archivo.close();
+        std::cout << "Estado de partida guardado correctamente" << endl;
+    } else {
+        std::cout << "No se pudo guardar el estado de partida" << endl;
+    }
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+};
+
+void cargarEstado() {
+    ifstream archivo("estado_partida.txt");
+    if (archivo.is_open()) {
+        string linea;
+        while (getline(archivo, linea)) {
+            cout << linea << endl;
+        }
+        archivo.close();
+        std::cout << "Estado de partida cargado correctamente" << endl;
+    } else {
+        std::cout << "No se pudo cargar el estado de partida" << endl;
+    }
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+};
 
 int main(){
     
