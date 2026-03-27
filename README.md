@@ -79,8 +79,6 @@ Automáticamente:
 •	Ana lanza: 5 
 •	Luis lanza: 10 
 Esto ayuda a organizar la partida y continuar correctamente.
-# Justificación:
+# Justificación
+
  El juego finaliza cuando el equipo completa todas las fases o pierde todas las vidas. La clave está en la comunicación no verbal, la confianza y la sincronía entre los participantes.
-=======
-<img width="827" height="595" alt="image" src="https://github.com/user-attachments/assets/fadf2fb5-2c73-455f-80f5-9c90d3fe828c" />
->>>>>>> 13305be7600fe904d900327709f55b4bea8ef3c7
