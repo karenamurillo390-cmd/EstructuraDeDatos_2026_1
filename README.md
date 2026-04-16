@@ -2,6 +2,8 @@
 <<<<<<< HEAD
 <img width="589" height="453" alt="image" src="https://github.com/user-attachments/assets/450656fc-654c-41bc-99eb-af33acef70df" />
 
+#Renombrar el branch
+
 # The Mind Game
 Este juego consiste en formar parejas u o grupos que permitan poner a prueba la sincronía entre los participantes. A través de diferentes dinámicas, los jugadores deberán actuar, pensar o responder de manera coordinada, sin necesidad de comunicarse directamente.
 Este juego busca desafiar la confianza entre los integrantes del grupo, fomentando la intuición y el trabajo en equipo.
